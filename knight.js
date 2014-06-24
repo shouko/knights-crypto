@@ -1,4 +1,5 @@
-splayElement = $('#demoDiv');
+//http://localhost:8080/notepad/Content/Algorithm/Famous/KnightTour/KnightTour.php
+var $displayElement = $('#demoDiv');
 var print = function(msg){
 	$displayElement.append(msg);
 };
