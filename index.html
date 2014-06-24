@@ -13,7 +13,11 @@
 
         <div class="masthead">
             <ul class="nav nav-pills pull-right">
-              <li><li class="active"><a href="#">Demo</a></li></ul>
+              <li class="active">
+								<button class="btn btn-primary" data-toggle="modal" data-target="#about">
+  								About
+								</button></li>
+						</ul>
             <h3 class="muted">Knight's Tour and Cryptography</h3>
         </div>
 
@@ -61,6 +65,25 @@
             <p>&copy; Shouko</p>
         </div>
 </div>
+
+<div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="aboutLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="aboutLabel">About</h4>
+      </div>
+      <div class="modal-body">
+				I'm Shouko, this is my final project for the course Discrete Mathematics in my freshman year in NTU IM, it's a text encryption tool based on the Knight's Tour for fun.<br><br>
+				GitHub Repo: <a href="https://github.com/shouko/knights-crypto">https://github.com/shouko/knights-crypto</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 	<script src="./jquery.min.js"></script>
 	<script src="./knight.js"></script>
   <script src="./bootstrap.min.js"></script>
