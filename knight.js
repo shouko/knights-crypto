@@ -59,6 +59,7 @@ var showResult = function(){
 	chessboard  = getNewChessboard();
 	count = 0 ;
 	$('#chessboard td').html('');
+	$('#chessboard2 td').html('');
 	clearTimeout(timer);
 	knightTour(getRandomCoord());
 };
