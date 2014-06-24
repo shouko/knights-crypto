@@ -48,7 +48,7 @@ var showStep = function(){
 	var $td = getStepTD(curShowStep);
 	var $td2 = getStepTD2(curShowStep);
 	$td.html(curShowStep);
-	$td2.html(oriText[curShowStep]);
+	$td2.html(oriText[curShowStep-1]);
 	if(curShowStep++ < ( ( I * J ) + 1 ) ){
 		timer = setTimeout(showStep, 150);
 	}
