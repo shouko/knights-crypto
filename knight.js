@@ -91,7 +91,7 @@ $(function(){
 	curstep = 1;
 	chessboard  = getNewChessboard();
 	count = 0 ;
-	knightTour({x:0,y:0});	
+//	knightTour({x:0,y:0});
 	$('#chessboard td').css(
 		{	'display': 'inline-block',
 			'width': ' 30px',
