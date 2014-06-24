@@ -3,6 +3,7 @@
 var I = 8;
 var J = 8;
 
+var oriText = '';
 var $displayElement = $('#demoDiv');
 var print = function(msg){
 	$displayElement.append(msg);
@@ -32,16 +33,24 @@ var getStepCoord = function(step){
 var getTD = function(coord){
 	return $('#chessboard tr').eq(coord.y).find('td').eq(coord.x);
 };
+var getTD2 = function(coord){
+	return $('#chessboard2 tr').eq(coord.y).find('td').eq(coord.x);
+};
 var getStepTD = function(step){
 	return getTD(getStepCoord(step));
+};
+var getStepTD2 = function(step){
+	return getTD2(getStepCoord(step));
 };
 var curShowStep = 1;
 var timer;
 var showStep = function(){
 	var $td = getStepTD(curShowStep);
+	var $td2 = getStepTD2(curShowStep);
 	$td.html(curShowStep);
+	$td2.html(oriText[curShowStep]);
 	if(curShowStep++ < ( ( I * J ) + 1 ) ){
-		timer = setTimeout(showStep, 500);
+		timer = setTimeout(showStep, 150);
 	}
 };
 var showResult = function(){
@@ -91,27 +100,23 @@ var getRandomCoord = function(){
 };
 
 
-function init(){
-	//var coord = getRandomCoord();
-	I = $('#I').val();
-	J = $('#J').val();
+function encrypt(){
+
+	oriText = $('#pText').val();
+	if(oriText.length < 64){
+		for(var i = 0; i < oriText.length; i++){
+			oriText[i] = ' ';
+		}
+	}
 
 	curstep = 1;
 	chessboard  = getNewChessboard();
 	count = 0 ;
 
-	var table = '<tbody>';
-	for(var i = 0; i < I; i++){
-		table += '<tr>';
-		for(var j = 0; j < J; j++){
-			table += '<td></td>';
-		}
-		table += '</tr>';
-	}
-	table += '</tbody>';
+	showResult();
+}
 
-	$('#chessboard').html(table);
-
+$(document).ready(function(){
 	$('#chessboard td').css(
 		{	'display': 'inline-block',
 			'width': ' 30px',
@@ -127,5 +132,20 @@ function init(){
 	$('#chessboard').css('border-right', 'none');
 	$('#chessboard tr:even td:odd').css('background', 'Black');
 	$('#chessboard tr:odd td:even').css('background', 'Black');
-	showResult();
-}
+
+	$('#chessboard2 td').css(
+		{	'display': 'inline-block',
+			'width': ' 30px',
+			'height': '30px',
+			'padding': '0',
+			'border':  'solid 1px black',
+			'line-height': '30px',
+			'text-align': 'center',
+			'color': 'DodgerBlue',
+			'font-size': '16px',
+			'font-weight': 'bold'
+		});
+	$('#chessboard2').css('border-right', 'none');
+	$('#chessboard2 tr:even td:odd').css('background', 'Black');
+	$('#chessboard2 tr:odd td:even').css('background', 'Black');
+});

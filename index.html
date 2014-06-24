@@ -2,7 +2,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Knight's Tour</title>
+    <title>Knight's Tour and Cryptography</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="./bootstrap.min.css" rel="stylesheet" media="screen">
@@ -14,18 +14,40 @@
         <div class="masthead">
             <ul class="nav nav-pills pull-right">
               <li><li class="active"><a href="#">Demo</a></li></ul>
-            <h3 class="muted">Knight's Tour</h3>
+            <h3 class="muted">Knight's Tour and Cryptography</h3>
         </div>
 
         <hr>
 		<div style="text-align: center">
-		<input id="I" value="8" size="3" />
-		<input id="J" value="8" size="3" />
-		<button class="btn btn-primary" id="demoBtn" onclick="init()">Run</button>
+		請輸入欲加密的文字，最多64個中文字:<br />
+		<textarea rows="8" cols="16" id="pText"></textarea><br>
+		<button class="btn btn-primary" id="demoBtn" onclick="encrypt()">Run</button>
 		<br><br>
 		<div id="demoDiv" class="demo">
 
-			<table id="chessboard" style="margin: 0 auto">
+			<table id="chessboard" style="margin: 0 auto; display: inline-block">
+				<tbody>
+					<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+					<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+					<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+					<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+					<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+					<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+					<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+					<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+				</tbody>
+			</table>
+			<table id="chessboard2" style="margin: 0 auto; display: inline-block">
+				<tbody>
+					<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+					<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+					<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+					<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+					<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+					<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+					<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+					<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+				</tbody>
 			</table>
 		</div>
 	</div>
