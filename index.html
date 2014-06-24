@@ -1,16 +1,41 @@
+
 <!doctype html>
 <html>
-<head>
-	<title>Knight's Tour</title>
-	<script type="text/javascript" src="jquery.min.js"></script>
-	<script type="text/javascript" src="knight.js"></script>
-</head>
-<body>
-<span class="h1">Demo:</span>
-		<div id="demoDiv" class="demo" style="width: 300px; height: 300px; overflow: auto;">
-			<input type="button" value="run" class="demoBtn" />
-			<table id="chessboard">
+  <head>
+    <title>Knight's Tour</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="./bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="./angel.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+  <div class="container-narrow">
+
+        <div class="masthead">
+            <ul class="nav nav-pills pull-right">
+              <li><li class="active"><a href="#">Demo</a></li></ul>
+            <h3 class="muted">Knight's Tour</h3>
+        </div>
+
+        <hr>
+		<div style="text-align: center">
+		<input id="I" value="8" size="3" />
+		<input id="J" value="8" size="3" />
+		<button class="btn btn-primary" id="demoBtn" onclick="init()">Run</button>
+		<br><br>
+		<div id="demoDiv" class="demo">
+
+			<table id="chessboard" style="margin: 0 auto">
 			</table>
 		</div>
-</body>
+	</div>
+<hr>
+        <div class="footer">
+            <p>&copy; Shouko</p>
+        </div>
+</div>
+	<script src="./jquery.min.js"></script>
+	<script src="./knight.js"></script>
+  <script src="./bootstrap.min.js"></script>
+  </body>
 </html>
