@@ -92,6 +92,19 @@ $(function(){
 	chessboard  = getNewChessboard();
 	count = 0 ;
 //	knightTour({x:0,y:0});
+
+	var table = '<tbody>';
+	for(var i = 0; i < 8; i++){
+		table += '<tr>';
+		for(var j = 0; j < 8; j++){
+			table += '<td></td>';
+		}
+		table += '</tr>';
+	}
+	table += '</tbody>';
+
+	$('#chessboard').html(table);
+
 	$('#chessboard td').css(
 		{	'display': 'inline-block',
 			'width': ' 30px',
